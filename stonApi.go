@@ -47,7 +47,7 @@ func getValues[T any](data []byte) T {
 	return result
 }
 
-func getAsset(assetAddress string) (Asset, error) {
+func GetAsset(assetAddress string) (Asset, error) {
 	response, err := request("/v1/assets/" + assetAddress)
 	if err != nil {
 		return Asset{}, err
@@ -55,7 +55,7 @@ func getAsset(assetAddress string) (Asset, error) {
 	return getValues[Asset](response), nil
 }
 
-func getAssets() ([]Asset, error) {
+func GeAssets() ([]Asset, error) {
 	response, err := request("/v1/assets")
 	if err != nil {
 		return []Asset{}, err
@@ -63,7 +63,7 @@ func getAssets() ([]Asset, error) {
 	return getValues[[]Asset](response), nil
 }
 
-func getFarms() ([]Farm, error) {
+func GeFarms() ([]Farm, error) {
 	response, err := request("/v1/farms")
 	if err != nil {
 		return []Farm{}, err
@@ -71,7 +71,7 @@ func getFarms() ([]Farm, error) {
 	return getValues[[]Farm](response), nil
 }
 
-func getFarm(farmAddress string) (Farm, error) {
+func GeFarm(farmAddress string) (Farm, error) {
 	response, err := request("/v1/farms/" + farmAddress)
 	if err != nil {
 		return Farm{}, err
@@ -79,7 +79,7 @@ func getFarm(farmAddress string) (Farm, error) {
 	return getValues[Farm](response), nil
 }
 
-func getFarmsByPool(poolAddress string) ([]Farm, error) {
+func GeFarmsByPool(poolAddress string) ([]Farm, error) {
 	response, err := request("/v1/farms_by_pool/" + poolAddress)
 	if err != nil {
 		return []Farm{}, err
@@ -87,7 +87,7 @@ func getFarmsByPool(poolAddress string) ([]Farm, error) {
 	return getValues[[]Farm](response), nil
 }
 
-func getSwapPairs() ([]SwapPairs, error) {
+func GeSwapPairs() ([]SwapPairs, error) {
 	response, err := request("/v1/markets")
 	if err != nil {
 		return []SwapPairs{}, err
@@ -96,7 +96,7 @@ func getSwapPairs() ([]SwapPairs, error) {
 
 }
 
-func getPool(poolAddress string) (Pool, error) {
+func GePool(poolAddress string) (Pool, error) {
 	response, err := request("/v1/pools/" + poolAddress)
 	if err != nil {
 		return Pool{}, err
@@ -105,7 +105,7 @@ func getPool(poolAddress string) (Pool, error) {
 
 }
 
-func getPools() ([]Pool, error) {
+func GePools() ([]Pool, error) {
 	response, err := request("/v1/pools")
 	if err != nil {
 		return []Pool{}, err
@@ -113,7 +113,7 @@ func getPools() ([]Pool, error) {
 	return getValues[[]Pool](response), nil
 }
 
-func getWalletAsset(walletAddress string, assetAddress string) (Asset, error) {
+func GeWalletAsset(walletAddress string, assetAddress string) (Asset, error) {
 	response, err := request("/v1/wallets/" + walletAddress + "/assets/" + assetAddress)
 	if err != nil {
 		return Asset{}, err
@@ -121,7 +121,7 @@ func getWalletAsset(walletAddress string, assetAddress string) (Asset, error) {
 	return getValues[Asset](response), nil
 }
 
-func getWalletAssets(walletAddress string) ([]Asset, error) {
+func GeWalletAssets(walletAddress string) ([]Asset, error) {
 	response, err := request("/v1/wallets/" + walletAddress + "/assets")
 	if err != nil {
 		return []Asset{}, err
@@ -129,7 +129,7 @@ func getWalletAssets(walletAddress string) ([]Asset, error) {
 	return getValues[[]Asset](response), nil
 }
 
-func getWalletFarm(walletAddress string, farmAddress string) (Farm, error) {
+func GeWalletFarm(walletAddress string, farmAddress string) (Farm, error) {
 	response, err := request("/v1/wallets/" + walletAddress + "/farms/" + farmAddress)
 	if err != nil {
 		return Farm{}, err
@@ -137,7 +137,7 @@ func getWalletFarm(walletAddress string, farmAddress string) (Farm, error) {
 	return getValues[Farm](response), nil
 }
 
-func getWalletPool(walletAddress string, poolAddress string) (Pool, error) {
+func GeWalletPool(walletAddress string, poolAddress string) (Pool, error) {
 	response, err := request("/v1/wallets/" + walletAddress + "/pools/" + poolAddress)
 	if err != nil {
 		return Pool{}, err
@@ -145,7 +145,7 @@ func getWalletPool(walletAddress string, poolAddress string) (Pool, error) {
 	return getValues[Pool](response), nil
 }
 
-func getWalletPools(walletAddress string) ([]Pool, error) {
+func GeWalletPools(walletAddress string) ([]Pool, error) {
 	response, err := request("/v1/wallets/" + walletAddress + "/pools")
 	if err != nil {
 		return []Pool{}, err
