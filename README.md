@@ -4,8 +4,9 @@ This Go program interacts with the `ston.fi` API v1 to fetch various types of da
 
 ### Getting Started
 To install the library, run:
-
+```
 go get github.com/fateevd/ston-fi-api-go
+```
 
 #### Constants
 ```go
