@@ -1,3 +1,3 @@
-module ston-fi-api-go
+module github.com/fateevd/ston-fi-go
 
 go 1.22.4
