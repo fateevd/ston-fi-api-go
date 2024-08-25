@@ -1,4 +1,4 @@
-### Documentation for `main.go`
+### Documentation
 
 This Go program interacts with the `ston.fi` API v1 to fetch various types of data such as assets, farms, pools, and wallet-related information. Below is the documentation for each function along with examples of how to use them.
 
