@@ -2,6 +2,11 @@
 
 This Go program interacts with the `ston.fi` API v1 to fetch various types of data such as assets, farms, pools, and wallet-related information. Below is the documentation for each function along with examples of how to use them.
 
+### Getting Started
+To install the library, run:
+
+go get github.com/fateevd/ston-fi-api-go
+
 #### Constants
 ```go
 const baseUrl = "https://api.ston.fi"
@@ -10,7 +15,7 @@ const baseUrl = "https://api.ston.fi"
 
 #### Functions
 
-##### `getAsset(assetAddress string) (Asset, error)` 1231
+##### `GetAsset(assetAddress string) (Asset, error)` 1231
 Fetches a single asset by its address.
 
 **Parameters:**
@@ -22,14 +27,14 @@ Fetches a single asset by its address.
 
 **Example:**
 ```go
-asset, err := getAsset("EQD8T***************")
+asset, err := GetAsset("EQD8T***************")
 if err != nil {
     fmt.Println("Error:", err)
 }
 fmt.Println(asset)
 ```
 
-##### `getAssets() ([]Asset, error)`
+##### `GetAssets() ([]Asset, error)`
 Fetches all assets.
 
 **Returns:**
@@ -38,14 +43,14 @@ Fetches all assets.
 
 **Example:**
 ```go
-assets, err := getAssets()
+assets, err := GetAssets()
 if err != nil {
     fmt.Println("Error:", err)
 }
 fmt.Println(assets)
 ```
 
-##### `getFarms() ([]Farm, error)`
+##### `GetFarms() ([]Farm, error)`
 Fetches all farms.
 
 **Returns:**
@@ -54,14 +59,14 @@ Fetches all farms.
 
 **Example:**
 ```go
-farms, err := getFarms()
+farms, err := GetFarms()
 if err != nil {
     fmt.Println("Error:", err)
 }
 fmt.Println(farms)
 ```
 
-##### `getFarm(farmAddress string) (Farm, error)`
+##### `GetFarm(farmAddress string) (Farm, error)`
 Fetches a single farm by its address.
 
 **Parameters:**
@@ -73,14 +78,14 @@ Fetches a single farm by its address.
 
 **Example:**
 ```go
-farm, err := getFarm("EQD8T***************")
+farm, err := GetFarm("EQD8T***************")
 if err != nil {
     fmt.Println("Error:", err)
 }
 fmt.Println(farm)
 ```
 
-##### `getFarmsByPool(poolAddress string) ([]Farm, error)`
+##### `GetFarmsByPool(poolAddress string) ([]Farm, error)`
 Fetches all farms associated with a specific pool.
 
 **Parameters:**
@@ -92,14 +97,14 @@ Fetches all farms associated with a specific pool.
 
 **Example:**
 ```go
-farms, err := getFarmsByPool("EQD8T***************")
+farms, err := GetFarmsByPool("EQD8T***************")
 if err != nil {
     fmt.Println("Error:", err)
 }
 fmt.Println(farms)
 ```
 
-##### `getSwapPairs() ([]SwapPairs, error)`
+##### `GetSwapPairs() ([]SwapPairs, error)`
 Fetches all swap pairs.
 
 **Returns:**
@@ -108,14 +113,14 @@ Fetches all swap pairs.
 
 **Example:**
 ```go
-swapPairs, err := getSwapPairs()
+swapPairs, err := GetSwapPairs()
 if err != nil {
     fmt.Println("Error:", err)
 }
 fmt.Println(swapPairs)
 ```
 
-##### `getPool(poolAddress string) (Pool, error)`
+##### `GetPool(poolAddress string) (Pool, error)`
 Fetches a single pool by its address.
 
 **Parameters:**
@@ -127,14 +132,14 @@ Fetches a single pool by its address.
 
 **Example:**
 ```go
-pool, err := getPool("EQD8T***************")
+pool, err := GetPool("EQD8T***************")
 if err != nil {
     fmt.Println("Error:", err)
 }
 fmt.Println(pool)
 ```
 
-##### `getPools() ([]Pool, error)`
+##### `GetPools() ([]Pool, error)`
 Fetches all pools.
 
 **Returns:**
@@ -143,14 +148,14 @@ Fetches all pools.
 
 **Example:**
 ```go
-pools, err := getPools()
+pools, err := GetPools()
 if err != nil {
     fmt.Println("Error:", err)
 }
 fmt.Println(pools)
 ```
 
-##### `getWalletAsset(walletAddress string, assetAddress string) (Asset, error)`
+##### `GetWalletAsset(walletAddress string, assetAddress string) (Asset, error)`
 Fetches a specific asset for a given wallet.
 
 **Parameters:**
@@ -163,14 +168,14 @@ Fetches a specific asset for a given wallet.
 
 **Example:**
 ```go
-asset, err := getWalletAsset("walletAddress", "assetAddress")
+asset, err := GetWalletAsset("walletAddress", "assetAddress")
 if err != nil {
     fmt.Println("Error:", err)
 }
 fmt.Println(asset)
 ```
 
-##### `getWalletAssets(walletAddress string) ([]Asset, error)`
+##### `GetWalletAssets(walletAddress string) ([]Asset, error)`
 Fetches all assets for a given wallet.
 
 **Parameters:**
@@ -182,14 +187,14 @@ Fetches all assets for a given wallet.
 
 **Example:**
 ```go
-assets, err := getWalletAssets("walletAddress")
+assets, err := GetWalletAssets("walletAddress")
 if err != nil {
     fmt.Println("Error:", err)
 }
 fmt.Println(assets)
 ```
 
-##### `getWalletFarm(walletAddress string, farmAddress string) (Farm, error)`
+##### `GetWalletFarm(walletAddress string, farmAddress string) (Farm, error)`
 Fetches a specific farm for a given wallet.
 
 **Parameters:**
@@ -202,14 +207,14 @@ Fetches a specific farm for a given wallet.
 
 **Example:**
 ```go
-farm, err := getWalletFarm("walletAddress", "farmAddress")
+farm, err := GetWalletFarm("walletAddress", "farmAddress")
 if err != nil {
     fmt.Println("Error:", err)
 }
 fmt.Println(farm)
 ```
 
-##### `getWalletPool(walletAddress string, poolAddress string) (Pool, error)`
+##### `GetWalletPool(walletAddress string, poolAddress string) (Pool, error)`
 Fetches a specific pool for a given wallet.
 
 **Parameters:**
@@ -222,14 +227,14 @@ Fetches a specific pool for a given wallet.
 
 **Example:**
 ```go
-pool, err := getWalletPool("walletAddress", "poolAddress")
+pool, err := GetWalletPool("walletAddress", "poolAddress")
 if err != nil {
     fmt.Println("Error:", err)
 }
 fmt.Println(pool)
 ```
 
-##### `getWalletPools(walletAddress string) ([]Pool, error)`
+##### `GetWalletPools(walletAddress string) ([]Pool, error)`
 Fetches all pools for a given wallet.
 
 **Parameters:**
@@ -241,7 +246,7 @@ Fetches all pools for a given wallet.
 
 **Example:**
 ```go
-pools, err := getWalletPools("walletAddress")
+pools, err := GetWalletPools("walletAddress")
 if err != nil {
     fmt.Println("Error:", err)
 }
