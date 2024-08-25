@@ -1,4 +1,4 @@
-package main
+package stonApi
 
 type Asset struct {
 	ContractAddress    string   `json:"contract_address"`
