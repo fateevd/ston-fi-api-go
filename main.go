@@ -1,4 +1,4 @@
-package main
+package stonApi
 
 import (
 	"encoding/json"
